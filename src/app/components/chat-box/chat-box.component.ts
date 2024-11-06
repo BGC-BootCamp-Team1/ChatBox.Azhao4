@@ -21,6 +21,7 @@ export class ChatBoxComponent {
     this.service.generateContent(this.prompt).subscribe((response) => {
       const regex = /^\(([^)]+)\)\s*(.*)$/s;
       const match = response.match(regex);
+      console.log(match)
       if (match) {
         this.responseIcon = match[1];
         this.responseMessage = match[2];
