@@ -1,0 +1,20 @@
+
+mat-card {
+  margin: 20px;
+}
+
+.result-card {
+  margin-top: 20px;
+  min-height: 150px; 
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+}

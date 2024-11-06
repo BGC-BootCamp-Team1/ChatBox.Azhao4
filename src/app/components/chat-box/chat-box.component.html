@@ -1,6 +1,14 @@
-<div>
-    <div>
-        prompt: {{ prompt }} 
-        response: {{ response }}
-    </div>
-</div>
+<mat-card>
+  <mat-form-field appearance="fill">
+    <mat-label>input your prompt</mat-label>
+    <input matInput [(ngModel)]="prompt">
+    <button mat-icon-button matSuffix>
+      <mat-icon>{{ responseIcon[iconSelection] }}</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSubmit()">确认</button>
+</mat-card>
+
+<mat-card *ngIf="response" class="result-card">
+  <mat-card-content>{{ response }}</mat-card-content>
+</mat-card>
