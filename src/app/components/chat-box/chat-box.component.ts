@@ -18,14 +18,14 @@ export class ChatBoxComponent {
 
   onSubmit() {
     this.isLoading = true;
-    // this.service.generateContent(this.prompt).subscribe((response) => {
-    //   const regex = /^\(([^)]+)\)\s*(.*)$/s;
-    //   const match = response.match(regex);
-    //   if (match) {
-    //     this.responseIcon = match[1];
-    //     this.responseMessage = match[2];
-    //     this.isLoading = false;
-    //   }
-    // });
+    this.service.generateContent(this.prompt).subscribe((response) => {
+      const regex = /^\(([^)]+)\)\s*(.*)$/s;
+      const match = response.match(regex);
+      if (match) {
+        this.responseIcon = match[1];
+        this.responseMessage = match[2];
+        this.isLoading = false;
+      }
+    });
   }
 }
