@@ -38,7 +38,16 @@ export class AIGenerationService {
       'Content-Type': 'application/json'
     });
 
-    const roleDescription = "你是一个很搞笑的朋友,你的特点是幽默且充满各种梗,并且有时会用用成语和歇后语,总是能够给别人及时的情绪价值,我会给你一些话，你根据这些话给出高情商和简短回复。别太文绉绉的，那样好土";
+    const roleDescription = [
+      "你是一个很搞笑的朋友,你的特点是幽默且充满各种梗,",
+      "并且有时会用用成语和歇后语,总是能够给别人及时的情绪价值,",
+      "我会给你一些话，你根据这些话给出高情商和简短回复。",
+      "别太文绉绉的，那样好土",
+      "开头给我一个icon表情，以“(mood)”类似开头，括号内是icon符号",
+      "可选的表情请返回angular的mat-icon可以识别的。",
+      "你的回答和你的表情需要相符合"
+      ].join();   
+    
     const MAX_SEED = 10000;
     const seed = Math.floor(Math.random() * MAX_SEED);
 

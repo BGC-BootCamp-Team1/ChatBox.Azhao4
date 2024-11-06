@@ -4,27 +4,25 @@ import { AIGenerationService } from '../../services/text-generation-response.ser
 @Component({
   selector: 'app-chat-box',
   templateUrl: './chat-box.component.html',
-  styleUrl: './chat-box.component.css'
+  styleUrl: './chat-box.component.css',
 })
-export class ChatBoxComponent {    
-  public prompt: string = ""
-  public response: string = "";
-  responseIcon: string[] = ['mood', 'mood_bad', 'sentiment_satisfied_alt', 'sentiment_neutral', 'sentiment_very_satisfied'];
+export class ChatBoxComponent {
+  public prompt: string = '';
+  public responseMessage: string = '';
+  responseIcon: string = '';
 
   iconSelection = 0;
 
-  constructor(public service: AIGenerationService) { 
-    // this.service.generateContent(this.prompt).subscribe(
-    //   response => { 
-    //     this.response = response;
-    //   });
-    this.response = "mock response";
-  }
+  constructor(public service: AIGenerationService) {}
 
-  onSubmit()
-  {
-    this.iconSelection = (this.iconSelection + 1) % this.responseIcon.length;
-    this.response = "new response";
+  onSubmit() {
+  //   this.service.generateContent(this.prompt).subscribe((response) => {
+  //     const regex = /^\(([^)]+)\)\s*(.*)$/s;
+  //     const match = response.match(regex);
+  //     if (match) {
+  //       this.responseIcon = match[1];
+  //       this.responseMessage = match[2];
+  //     }
+  //   });
   }
-
 }
