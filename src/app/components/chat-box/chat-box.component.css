@@ -24,3 +24,9 @@ button {
   align-items: center;
   height: 100px;
 }
+
+.container {
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+}

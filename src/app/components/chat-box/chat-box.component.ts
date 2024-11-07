@@ -19,14 +19,12 @@ export class ChatBoxComponent {
   onSubmit() {
     this.isLoading = true;
     this.service.generateContent(this.prompt).subscribe((response) => {
-      const regex = /^\(([^)]+)\)\s*(.*)$/s;
-      const match = response.match(regex);
-      console.log(match)
-      if (match) {
-        this.responseIcon = match[1];
-        this.responseMessage = match[2];
-        this.isLoading = false;
-      }
+      console.log(response);
+      let parsedData = JSON.parse(response);
+      
+      this.responseIcon = parsedData.icon ? parsedData.icon : "mood";
+      this.responseMessage = parsedData.message ? parsedData.message : response;
+      this.isLoading = false;
     });
   }
 }

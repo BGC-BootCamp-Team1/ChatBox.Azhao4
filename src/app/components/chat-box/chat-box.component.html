@@ -1,17 +1,20 @@
-<mat-card>
-  <mat-form-field appearance="fill">
-    <mat-label>input your prompt</mat-label>
-    <input matInput [(ngModel)]="prompt" />
-    <button mat-icon-button matSuffix>
-      <mat-icon>{{ responseIcon }}</mat-icon>
-    </button>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="onSubmit()">确认</button>
-</mat-card>
-
-<mat-card class="result-card">
-  <mat-card-content *ngIf="!isLoading">{{ responseMessage }}</mat-card-content>
-  <mat-card-content *ngIf="isLoading" class="loading-container">
-    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
-  </mat-card-content>
-</mat-card>
+<div class="container">
+  <mat-card>
+    <mat-form-field appearance="fill">
+      <mat-label>input your prompt</mat-label>
+      <input matInput [(ngModel)]="prompt" />
+      <button mat-icon-button matSuffix>
+        <mat-icon>{{ responseIcon }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSubmit()">确认</button>
+  </mat-card>
+  
+  <mat-card class="result-card">
+    <mat-card-content *ngIf="!isLoading">{{ responseMessage }}</mat-card-content>
+    <mat-card-content *ngIf="isLoading" class="loading-container">
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </mat-card-content>
+  </mat-card>
+  
+</div>
